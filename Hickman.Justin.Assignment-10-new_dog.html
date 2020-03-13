@@ -1,0 +1,10 @@
+{% extends "dogs_project/base.html" %}
+
+{% block content %}
+    <p>Add a new dog:</p>
+    <form action="{% url 'dogs_project:new_dog' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Add Dog</button>
+    </form>
+{% endblock content %}
